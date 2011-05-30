@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  color: MyString
+  grade: 1
+  setter: MyString
+  description: MyText
+
+two:
+  name: MyString
+  color: MyString
+  grade: 1
+  setter: MyString
+  description: MyText
