@@ -1,0 +1,7 @@
+- ratings = Rating.find_all_by_route_id(@route.id)
+- total_rating = ''.to_f
+- ratings.each do |rating|
+  - total_rating = total_rating + rating.rating
+- consensus = total_rating / ratings.count
+%p
+  %strong= consensus

@@ -7,14 +7,17 @@ ActiveAdmin::Dashboards.build do
   # == Simple Dashboard Section
   # Here is an example of a simple dashboard section
   #
-    section "Recent Routes" do
-      ul do
-        routes = Route.find(:all, :limit => 5)
-        routes.each do |route|
-          li link_to(route.name, admin_route_path(route))
-        end
-      end
+    
+  section "Recent Routes", :priority => 1 do
+    table_for Route.order('id desc').limit(10) do
+      column :name
+      column :color
+      column :grade
+      column :created_at
+      column("Setter", :setter, :sortable => :setter_id)
+      column("Area", :area, :sortable => :area_id, :class => 'red')
     end
+  end
   
   # == Render Partial Section
   # The block is rendererd within the context of the view, so you can

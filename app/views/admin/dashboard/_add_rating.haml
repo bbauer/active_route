@@ -1,0 +1,8 @@
+= form_for :rating, :url => '/ratings/add' do |f|
+  .field
+    %br/
+    = f.text_field :rating
+    = f.hidden_field :route_id, :value => @route.id
+  .actions
+    %br/
+    = f.submit 'Submit'

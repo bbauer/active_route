@@ -1,0 +1,2 @@
+class SettersController < ApplicationController
+end
