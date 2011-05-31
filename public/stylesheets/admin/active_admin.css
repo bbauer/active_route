@@ -800,8 +800,7 @@ body {
 #footer {
   padding: 30px 30px;
   font-size: 0.8em;
-  clear: both;
-  display:none; }
+  clear: both; }
   #footer p {
     padding-top: 10px; }
 
@@ -966,13 +965,11 @@ table {
       -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e2e2e2, endColorstr=#d2d4d6);
       border-bottom: 1px solid #dfe1e2; }
   table tr.even td {
-    background: #ccc; }
+    background: #f4f5f5; }
   table td {
     padding: 10px 12px 8px 12px;
     border-bottom: 1px solid #e8e8e8;
     vertical-align: top; }
-
-.event td { background:#f6f6f6; }
 
 .panel_contents table {
   margin-top: 5px; }

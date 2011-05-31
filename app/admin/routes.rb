@@ -1,4 +1,10 @@
 ActiveAdmin.register Route do
+  
+  scope :all, :default => true
+  scope :brian
+  scope :chuck
+  scope :billy
+  
   index do
     id_column
     column :name
@@ -11,15 +17,18 @@ ActiveAdmin.register Route do
     column("Area", :area, :sortable => :area_id)
     default_actions
   end
+  
   sidebar "Climber Consensus", :only => :show do
     div do
       render('/admin/dashboard/client_consensus')
     end
   end
+  
   sidebar "Your Grade", :only => :show do
     div do
       render('/admin/dashboard/add_rating')
     end
   end
+  
 end
 
