@@ -4,4 +4,5 @@
 %h2 Recent Routes
 %ul
   - @routes.each do |route|
-    %li= "<a href=''>#{route.name}</a>"
+    %li
+      %a{:href => ''}= route.name
