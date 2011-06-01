@@ -8,7 +8,7 @@ ActiveAdmin.register Route do
   index do
     id_column
     column :name
-    column :color
+    column ("Color", :sortable => :color) {|route| status_tag(route.color) }
     column :grade
     column("Consensus") {|route| route.consensus }
     #column :created_at

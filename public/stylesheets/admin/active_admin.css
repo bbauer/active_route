@@ -240,15 +240,21 @@ th, td, caption {
   -moz-box-shadow: 0 1px 2px #aaaaaa;
   -webkit-box-shadow: 0 1px 2px #aaaaaa;
   text-shadow: black 0 1px 0;
-  padding: 9px 30px;
+  padding: 12px 30px 10px 30px;
   position: relative;
   z-index: 900; }
   #header h1 {
     display: inline;
-    color: #cdcdcd;
+    color: #fff;
     margin-right: 20px;
     font-size: 1.3em;
-    font-weight: normal; }
+    font-weight: normal;
+    background:#7292c2;
+    padding:5px 12px 6px 12px;
+    margin-top:5px;
+		-moz-border-radius: 12px;
+		-webkit-border-radius: 12px;
+		border-radius: 12px; }
   #header a, #header a:link {
     color: #cdcdcd; }
   #header ul#tabs {
@@ -800,7 +806,8 @@ body {
 #footer {
   padding: 30px 30px;
   font-size: 0.8em;
-  clear: both; }
+  clear: both;
+  display:none; }
   #footer p {
     padding-top: 10px; }
 
@@ -1387,11 +1394,17 @@ table.dashboard {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   padding: 3px 5px 2px 5px;
-  font-size: 0.8em; }
+  font-size: 0.8em;
+  -moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+	border-radius: 9px; }
   .status.published, .status.complete, .status.completed, .status.green {
     background: #8daa92; }
   .status.error, .status.errored, .status.red {
     background: #d45f53; }
+  .status.blue { background:blue;}
+  .status.purple { background:purple;}
+  .status.pink { background:pink;}
 
 .scopes {
   float: left;

@@ -24,4 +24,8 @@ class Route < ActiveRecord::Base
     end
   end
   
+  def color_tag
+    "<span class='tag_pink'>#{self.color}</span>"
+  end
+  
 end
