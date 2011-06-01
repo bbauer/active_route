@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  color: MyString
+  grade: 1.5
+  name: MyString
+  description: MyText
+  area_id: 1
+  setter_id: 1
+
+two:
+  color: MyString
+  grade: 1.5
+  name: MyString
+  description: MyText
+  area_id: 1
+  setter_id: 1

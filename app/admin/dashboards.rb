@@ -11,11 +11,26 @@ ActiveAdmin::Dashboards.build do
   section "Recent Routes", :priority => 1 do
     table_for Route.order('id desc').limit(10) do
       column :name
-      column :color
+      column ("Color", :sortable => :color) {|route| status_tag(route.color) }
       column :grade
-      column :created_at
+      column("Consensus") {|route| route.consensus }
+      #column :created_at
+      column("Age", :sortable => :created_at) {|route| distance_of_time_in_words(Time.now,route.created_at) }
       column("Setter", :setter, :sortable => :setter_id)
-      column("Area", :area, :sortable => :area_id, :class => 'red')
+      column("Area", :area, :sortable => :area_id)
+    end
+  end
+  
+  section "Recent Boulders", :priority => 2 do
+    table_for Boulder.order('id desc').limit(10) do
+      column :name
+      column ("Color", :sortable => :color) {|route| status_tag(route.color) }
+      column :grade
+      column("Consensus") {|route| route.consensus }
+      #column :created_at
+      column("Age", :sortable => :created_at) {|route| distance_of_time_in_words(Time.now,route.created_at) }
+      column("Setter", :setter, :sortable => :setter_id)
+      column("Area", :area, :sortable => :area_id)
     end
   end
   

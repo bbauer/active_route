@@ -6,10 +6,10 @@ ActiveAdmin.register Route do
   scope :billy
   
   index do
-    id_column
-    column :name
+    #id_column
     column ("Color", :sortable => :color) {|route| status_tag(route.color) }
     column :grade
+    column :name
     column("Consensus") {|route| route.consensus }
     #column :created_at
     column("Age", :sortable => :created_at) {|route| distance_of_time_in_words(Time.now,route.created_at) }

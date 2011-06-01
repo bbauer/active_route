@@ -10,17 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110530224820) do
+ActiveRecord::Schema.define(:version => 20110601073146) do
 
   create_table "active_admin_comments", :force => true do |t|
-    t.integer  "resource_id",   :null => false
-    t.string   "resource_type", :null => false
-    t.integer  "author_id"
-    t.string   "author_type"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "namespace"
+    t.integer   "resource_id",   :null => false
+    t.string    "resource_type", :null => false
+    t.integer   "author_id"
+    t.string    "author_type"
+    t.text      "body"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "namespace"
   end
 
   add_index "active_admin_comments", ["author_type", "author_id"], :name => "index_active_admin_comments_on_author_type_and_author_id"
@@ -28,63 +28,74 @@ ActiveRecord::Schema.define(:version => 20110530224820) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
 
   create_table "admin_users", :force => true do |t|
-    t.string   "email",                                 :default => "", :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                         :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "email",                                 :default => "", :null => false
+    t.string    "encrypted_password",     :limit => 128, :default => "", :null => false
+    t.string    "reset_password_token"
+    t.timestamp "reset_password_sent_at"
+    t.timestamp "remember_created_at"
+    t.integer   "sign_in_count",                         :default => 0
+    t.timestamp "current_sign_in_at"
+    t.timestamp "last_sign_in_at"
+    t.string    "current_sign_in_ip"
+    t.string    "last_sign_in_ip"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "areas", :force => true do |t|
+    t.string    "name"
+    t.text      "location"
+    t.string    "type"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "climbing_type"
+  end
+
+  create_table "boulders", :force => true do |t|
+    t.string   "color"
+    t.float    "grade"
     t.string   "name"
-    t.text     "location"
-    t.string   "type"
+    t.text     "description"
+    t.integer  "area_id"
+    t.integer  "setter_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "climbing_type"
   end
 
   create_table "pages", :force => true do |t|
-    t.string   "title"
-    t.string   "header"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.string    "header"
+    t.text      "body"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "ratings", :force => true do |t|
-    t.float    "rating"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "route_id"
+    t.float     "rating"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "route_id"
   end
 
   create_table "routes", :force => true do |t|
-    t.string   "name"
-    t.string   "color"
-    t.float    "grade"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "area_id"
-    t.integer  "setter_id"
-    t.string   "climbing_type"
+    t.string    "name"
+    t.string    "color"
+    t.float     "grade"
+    t.text      "description"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "area_id"
+    t.integer   "setter_id"
+    t.string    "climbing_type"
   end
 
   create_table "setters", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "name"
   end
 
 end
