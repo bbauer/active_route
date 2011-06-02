@@ -9,15 +9,18 @@ ActiveAdmin::Dashboards.build do
   #
     
   section "Recent Routes", :priority => 1 do
-    table_for Route.order('id desc').limit(10) do
-      column :name
+    table_for Route.order('id desc').limit(9) do
+      #column :name
       column ("Color", :sortable => :color) {|route| status_tag(route.color) }
-      column :grade
-      column("Consensus") {|route| route.consensus }
-      #column :created_at
-      column("Age", :sortable => :created_at) {|route| distance_of_time_in_words(Time.now,route.created_at) }
+      column("Grade", :sortable => :grade) {|route| "5.#{route.grade.to_i}" }
       column("Setter", :setter, :sortable => :setter_id)
       column("Area", :area, :sortable => :area_id)
+    end
+  end
+  
+  section "Current Route Distribution", :priority => 2 do
+    div do
+      render('/admin/dashboard/route_chart')
     end
   end
   
