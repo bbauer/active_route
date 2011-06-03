@@ -2,6 +2,7 @@ class Route < ActiveRecord::Base
 
   belongs_to :area
   belongs_to :setter
+  has_many :issues, :dependent => :destroy
   has_many :ratings, :dependent => :destroy
   
   named_scope :brian, :conditions => {:setter_id => 2}

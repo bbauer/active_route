@@ -8,13 +8,22 @@ ActiveAdmin::Dashboards.build do
   # Here is an example of a simple dashboard section
   #
     
-  section "Recent Routes", :priority => 1 do
-    table_for Route.order('id desc').limit(9) do
-      #column :name
-      column ("Color", :sortable => :color) {|route| status_tag(route.color) }
-      column("Grade", :sortable => :grade) {|route| "5.#{route.grade.to_i}" }
-      column("Setter", :setter, :sortable => :setter_id)
-      column("Area", :area, :sortable => :area_id)
+  # section "Recent Routes", :priority => 1 do
+  #     table_for Route.order('id desc').limit(9) do
+  #       #column :name
+  #       column ("Color", :sortable => :color) {|route| status_tag(route.color) }
+  #       column("Grade", :sortable => :grade) {|route| "5.#{route.grade.to_i}" }
+  #       column("Setter", :setter, :sortable => :setter_id)
+  #       column("Area", :area, :sortable => :area_id)
+  #     end
+  #   end
+  
+  section "Recent Route Issues", :priority => 1 do
+    table_for Issue.order('id desc').limit(9) do 
+      column("Status", :sortable => :status) {|issue| status_tag(issue.status) }
+      column("Route", :route)
+      column("Issue", :title, :sortable => :title)
+      column("") {|issue| link_to("View", "issues/#{issue.id}") }
     end
   end
   

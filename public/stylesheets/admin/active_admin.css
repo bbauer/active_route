@@ -1399,12 +1399,14 @@ table.dashboard {
 	-webkit-border-radius: 9px;
 	border-radius: 9px; }
   .status.published, .status.complete, .status.completed, .status.green {
-    background: #8daa92; }
+    background: #6CC644; }
   .status.error, .status.errored, .status.red {
-    background: #d45f53; }
-  .status.blue { background:blue;}
+    background: #BD2C00; }
+  .status.blue { background:#4183C4;}
   .status.purple { background:purple;}
   .status.pink { background:pink;}
+	.status.open { background:#6CC644; }
+	.status.closed { background:#BD2C00; }
 
 .scopes {
   float: left;

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110601073146) do
+ActiveRecord::Schema.define(:version => 20110602233628) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer   "resource_id",   :null => false
@@ -55,12 +55,21 @@ ActiveRecord::Schema.define(:version => 20110601073146) do
   end
 
   create_table "boulders", :force => true do |t|
-    t.string   "color"
-    t.float    "grade"
-    t.string   "name"
+    t.string    "color"
+    t.float     "grade"
+    t.string    "name"
+    t.text      "description"
+    t.integer   "area_id"
+    t.integer   "setter_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+  end
+
+  create_table "issues", :force => true do |t|
+    t.string   "title"
     t.text     "description"
-    t.integer  "area_id"
-    t.integer  "setter_id"
+    t.string   "status"
+    t.integer  "route_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
