@@ -8,4 +8,16 @@ ActiveAdmin.register Issue do
     column :created_at
     default_actions
   end
+  
+  form do |f|
+    f.inputs "Details" do
+      f.input :title
+      f.input :description
+    end
+    f.inputs "Status" do
+      f.input :status, :as => :select, :collection => ["Open", "Closed"], :selected => "Open"
+    end
+    f.buttons
+  end
+  
 end
