@@ -23,7 +23,7 @@ ActiveAdmin::Dashboards.build do
       column("Status", :sortable => :status) {|issue| status_tag(issue.status) }
       column("Route", :route)
       column("Issue", :title, :sortable => :title)
-      column("") {|issue| link_to("View", "issues/#{issue.id}") }
+      column("") {|issue| link_to("View", "/admin/issues/#{issue.id}") }
     end
   end
   
